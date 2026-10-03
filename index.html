@@ -3,209 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f1226" />
-  <meta name="description" content="Reverie Playtest launches 8/14/2026. Watch the trailer, join the Discord, download the build, and submit QA feedback." />
+  <meta name="theme-color" content="#090b16" />
+  <meta name="description" content="Reverie — a psychedelic psychological horror action-adventure. Wishlist on Steam and join the October 16, 2026 Steam Playtest. Appearing at GDEX October 16–18, with a full demo coming in 2027." />
   <link rel="icon" type="image/png" href="reverieIcon.png" />
 
-  <!-- Open Graph / Discord / social embed metadata -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Reverie — Playtest Launching 4/23/2026" />
-  <meta property="og:description" content="Enter the world of Reverie. Watch the trailer, join the community, download the playtest build, and report bugs." />
+  <meta property="og:title" content="Reverie — Steam Playtest October 16, 2026" />
+  <meta property="og:description" content="Wishlist Reverie on Steam, join the October 16 playtest, and meet the game at GDEX October 16–18. Full demo coming in 2027." />
   <meta property="og:url" content="https://reveriegame.github.io/ReverieGame/" />
-  <meta property="og:image" content="https://reveriegame.github.io/ReverieGame/reverie-og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://reveriegame.github.io/ReverieGame/mainCapsule.png" />
+  <meta property="og:image:width" content="1232" />
+  <meta property="og:image:height" content="706" />
   <meta property="og:site_name" content="Reverie" />
 
-  <!-- Twitter / X embed metadata -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reverie — Playtest Launching 4/23/2026" />
-  <meta name="twitter:description" content="Watch the trailer, join the Discord, download the playtest build, and submit QA feedback." />
-  <meta name="twitter:image" content="https://reveriegame.github.io/ReverieGame/reverie-og-image.png" />
+  <meta name="twitter:title" content="Reverie — Steam Playtest October 16, 2026" />
+  <meta name="twitter:description" content="Wishlist Reverie on Steam and join the October 16 playtest. GDEX October 16–18. Full demo coming in 2027." />
+  <meta name="twitter:image" content="https://reveriegame.github.io/ReverieGame/mainCapsule.png" />
 
-  <!-- richer link preview data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Reverie",
-    "description": "Playtest landing page for Reverie.",
+    "description": "A psychedelic psychological horror action-adventure set in a world where reality is breaking apart.",
     "applicationCategory": "Game",
-    "genre": ["Action", "Adventure", "Narrative"],
-    "datePublished": "2026-08-14",
+    "genre": ["Action", "Adventure", "Indie", "RPG", "Horror"],
     "url": "https://reveriegame.github.io/ReverieGame/"
   }
   </script>
 
-  <title>Reverie — Playtest Launching 4/23/2026</title>
+  <title>Reverie — Steam Playtest October 16, 2026</title>
 
   <style>
     :root {
-      --bg: #090b16;
-      --bg2: #101633;
-      --panel: rgba(14, 18, 40, 0.72);
-      --line: rgba(165, 175, 255, 0.18);
-      --text: #eef0ff;
-      --muted: #b7bddf;
+      color-scheme: light dark;
+      --bg: light-dark(#f2f4ff, #090b16);
+      --bg-deep: light-dark(#e8ebfb, #101633);
+      --panel: light-dark(rgba(255,255,255,0.78), rgba(14,18,40,0.72));
+      --panel-strong: light-dark(rgba(255,255,255,0.92), rgba(11,15,33,0.9));
+      --line: light-dark(rgba(50,62,120,0.16), rgba(165,175,255,0.18));
+      --text: light-dark(#15182a, #eef0ff);
+      --muted: light-dark(#59607e, #b7bddf);
       --accent: #8c7bff;
       --accent2: #53d7ff;
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --green: #62f0b3;
+      --shadow: 0 18px 60px rgba(0,0,0,0.28);
+      --radius-lg: 30px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(1200px 800px at 15% 10%, rgba(140,123,255,0.25), transparent 55%),
-        radial-gradient(900px 600px at 85% 20%, rgba(83,215,255,0.18), transparent 50%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+      background: var(--bg-deep);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    #app {
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(1200px 760px at 8% 0%, rgba(140,123,255,0.20), transparent 56%),
+        radial-gradient(900px 620px at 96% 12%, rgba(83,215,255,0.14), transparent 52%),
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.08) 100%);
     }
 
     .noise {
       pointer-events: none;
       position: fixed;
       inset: 0;
-      opacity: 0.035;
+      opacity: 0.032;
       mix-blend-mode: screen;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      z-index: 50;
     }
 
     .container {
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 24px 0 80px;
+      padding: 22px 0 76px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: #08111d;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.20) inset,
+        0 10px 24px rgba(83,215,255,0.20);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    .brand p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      text-decoration: none;
+      backdrop-filter: blur(14px);
+    }
+
+    .chip:hover {
+      background: var(--panel-strong);
     }
 
     .hero {
       position: relative;
-      padding: 28px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(16,22,51,0.82), rgba(10,12,26,0.72));
-      border-radius: 32px;
-      box-shadow: var(--shadow);
       overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(19,24,54,0.92), rgba(10,12,26,0.78));
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 18px;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: -2px;
-      background: linear-gradient(120deg, rgba(140,123,255,0.18), transparent 30%, rgba(83,215,255,0.14) 70%, transparent);
-      opacity: 0.65;
+      background: linear-gradient(
+        110deg,
+        rgba(140,123,255,0.22),
+        transparent 30%,
+        rgba(83,215,255,0.16) 72%,
+        transparent
+      );
+      opacity: 0.75;
       pointer-events: none;
     }
 
-    .topbar {
+    .hero-media {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 28px;
-      z-index: 1;
+      min-height: 440px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #070910;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.34);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      display: block;
     }
 
-    .logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 30% 30%, #ffffff 0 8%, transparent 10%),
-        linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.12) inset, 0 12px 30px rgba(83,215,255,0.25);
-      flex: 0 0 auto;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(1.6rem, 3vw, 2.8rem);
-      letter-spacing: 0.02em;
-      line-height: 1;
-    }
-
-    .brand p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.92rem;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-
-    .pill:hover { transform: translateY(-1px); background: rgba(255,255,255,0.1); }
-
-    .hero-grid {
-      position: relative;
+    .hero-media .fallback {
+      position: absolute;
+      inset: 0;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      z-index: 1;
-      align-items: start;
+      place-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(140,123,255,0.34), transparent 24%),
+        radial-gradient(circle at 76% 70%, rgba(83,215,255,0.24), transparent 28%),
+        linear-gradient(135deg, #11152b, #060810 70%);
+      color: #eef0ff;
     }
 
-    .intro {
-      padding-right: 8px;
+    .hero-media .fallback strong {
+      display: block;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      letter-spacing: -0.07em;
+      line-height: 0.9;
+    }
+
+    .hero-media .fallback span {
+      display: block;
+      margin-top: 12px;
+      color: #aeb7d8;
+      font-size: 0.9rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      bottom: 28px;
+      max-width: 760px;
+      padding: 20px;
+      border-radius: 20px;
+      background: linear-gradient(
+        180deg,
+        rgba(4,6,13,0.28),
+        rgba(4,6,13,0.86)
+      );
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(98,240,179,0.25);
+      padding: 7px 10px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(98,240,179,0.28);
       border-radius: 999px;
-      color: #d8ffe7;
-      background: rgba(98,240,179,0.08);
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
+      color: #ddffed;
+      background: rgba(98,240,179,0.09);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .intro h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 5vw, 4.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      max-width: 11ch;
+    .hero-copy h2 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(2.2rem, 5.7vw, 5.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      max-width: 10ch;
     }
 
-    .intro p {
-      margin: 0 0 18px;
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.65;
+    .hero-copy p {
+      margin: 14px 0 0;
+      color: #ced5ef;
+      max-width: 70ch;
+      line-height: 1.62;
+      font-size: 1rem;
     }
 
-    .cta-row {
+    .hero-actions {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin: 18px 0 26px;
+      flex-wrap: wrap;
+      padding: 18px 4px 2px;
+      align-items: center;
     }
 
     .btn {
@@ -214,413 +304,980 @@
       justify-content: center;
       gap: 10px;
       padding: 13px 18px;
-      border-radius: 14px;
+      border-radius: var(--radius-sm);
       border: 1px solid transparent;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
-      background: rgba(255,255,255,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
       cursor: pointer;
       user-select: none;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
     .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #08111d;
-      box-shadow: 0 10px 30px rgba(140,123,255,0.3);
-    }
-    .btn.ghost { border-color: var(--line); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 8px;
+      color: #071019;
+      background: linear-gradient(135deg, #9e91ff, #65ddff);
+      box-shadow: 0 12px 34px rgba(140,123,255,0.26);
     }
 
-    .stat {
-      padding: 16px 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
+    .btn.ghost {
+      border-color: var(--line);
+      background: var(--panel);
       backdrop-filter: blur(10px);
     }
 
-    .stat .label { display:block; color: var(--muted); font-size: 0.84rem; margin-bottom: 6px; }
-    .stat .value { font-size: 1.15rem; font-weight: 800; letter-spacing: 0.01em; }
+    .btn .arrow {
+      opacity: 0.75;
+    }
 
-    .sidecard {
-      padding: 18px;
-      border-radius: 24px;
+    .section {
+      margin-top: 20px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
       background: var(--panel);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       backdrop-filter: blur(16px);
-      position: relative;
-      overflow: hidden;
     }
 
-    .sidecard::after {
-      content: "";
-      position: absolute;
-      inset: auto -20% -30% auto;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(83,215,255,0.22), transparent 70%);
-      pointer-events: none;
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
     }
 
-    .release-title {
-      margin: 0 0 8px;
-      font-size: 0.96rem;
+    .section h3 {
+      margin: 0;
+      font-size: 1.42rem;
+      letter-spacing: -0.025em;
+    }
+
+    .section .sub {
+      margin: 5px 0 0;
       color: var(--muted);
+      line-height: 1.62;
+      max-width: 78ch;
+    }
+
+    .notice-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 16px;
+    }
+
+    .notice {
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel-strong);
+    }
+
+    .notice.featured {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(140,123,255,0.14),
+          rgba(83,215,255,0.08)
+        ),
+        var(--panel-strong);
+    }
+
+    .notice-label {
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .notice strong {
+      display: block;
+      font-size: 1.22rem;
+      letter-spacing: -0.02em;
+    }
+
+    .notice p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .count {
+      min-width: 74px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .count strong {
+      font-size: 1.28rem;
+      line-height: 1;
+    }
+
+    .count span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
-    .release {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(98,240,179,0.08);
-      border: 1px solid rgba(98,240,179,0.18);
-      color: #dbffee;
-      margin-bottom: 16px;
-    }
-
-    .release strong { display:block; font-size: 1rem; }
-    .release span { color: #c4f6da; font-size: 0.9rem; }
-
-    .mini-list {
+    .trailer-card {
       display: grid;
-      gap: 10px;
-      margin-top: 14px;
+      grid-template-columns: 1fr 0.84fr;
+      gap: 16px;
     }
 
-    .mini-item {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .section {
-      margin-top: 22px;
-      padding: 22px;
-      border-radius: 28px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .section h3 {
-      margin: 0 0 14px;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section p.sub {
-      margin: -4px 0 18px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .video-wrap {
+    .video-link {
       position: relative;
+      min-height: 310px;
       border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: #000;
-      aspect-ratio: 16 / 9;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background:
+        radial-gradient(
+          circle at 68% 34%,
+          rgba(83,215,255,0.28),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 30% 70%,
+          rgba(140,123,255,0.30),
+          transparent 27%
+        ),
+        linear-gradient(135deg, #171a35, #07090e 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.22);
     }
 
-    .video-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .video-link::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .play-icon {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      padding-left: 5px;
+      font-size: 2rem;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.20);
+      box-shadow: 0 12px 38px rgba(0,0,0,0.24);
+      backdrop-filter: blur(12px);
+    }
+
+    .video-caption {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      z-index: 2;
+    }
+
+    .video-caption strong {
       display: block;
+      font-size: 1.06rem;
     }
 
-    .info-card {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
+    .video-caption span {
+      color: #bfc7e1;
+      font-size: 0.85rem;
     }
 
-    .info-card h4 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-    }
-
-    .info-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .link-list {
+    .feature-list {
       display: grid;
       gap: 10px;
     }
 
-    .link-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+    .feature-item {
       padding: 14px 16px;
       border-radius: 16px;
-      text-decoration: none;
-      color: var(--text);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       border: 1px solid var(--line);
-      transition: transform 0.2s ease, background 0.2s ease;
     }
 
-    .link-item:hover { transform: translateY(-1px); background: rgba(255,255,255,0.09); }
-    .link-item small { color: var(--muted); display:block; margin-top: 3px; }
-    .arrow { font-size: 1.1rem; opacity: 0.8; }
+    .feature-item strong {
+      display: block;
+      font-size: 0.98rem;
+    }
 
-    .tabs {
+    .feature-item span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.91rem;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .merch-art {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: #0c1022;
+    }
+
+    .merch-art img {
+      width: 100%;
+      height: 100%;
+      min-height: 310px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .merch-art .fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 26px;
+      background:
+        radial-gradient(
+          circle at 24% 24%,
+          rgba(140,123,255,0.33),
+          transparent 24%
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(83,215,255,0.24),
+          transparent 28%
+        ),
+        linear-gradient(135deg, #11142a, #07090e 72%);
+      color: #eef0ff;
+    }
+
+    .merch-art .fallback strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .merch-art .fallback span {
+      display: block;
+      margin-top: 6px;
+      color: #aab5d4;
+      font-size: 0.85rem;
+    }
+
+    .merch-copy {
+      padding: 4px 0;
+    }
+
+    .merch-copy h4 {
+      margin: 0;
+      font-size: 1.36rem;
+      letter-spacing: -0.025em;
+    }
+
+    .merch-copy p {
+      margin: 9px 0 16px;
+      color: var(--muted);
+      line-height: 1.67;
+    }
+
+    .tag-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 8px;
     }
 
-    .tab {
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .link-card {
+      display: block;
+      padding: 16px;
+      border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.05);
       color: var(--text);
-      padding: 10px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: background 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease;
     }
 
-    .tab.active {
-      background: linear-gradient(135deg, rgba(140,123,255,0.95), rgba(83,215,255,0.92));
-      color: #08111d;
-      border-color: transparent;
+    .link-card:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
     }
 
-    .panel {
-      display: none;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
+    .link-card strong {
+      display: block;
     }
-    .panel.active { display: block; }
-    .panel p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+    .link-card span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.45;
+    }
 
     .footer {
       margin-top: 20px;
-      padding: 18px 4px 0;
+      padding: 16px 4px 0;
       color: var(--muted);
       text-align: center;
-      font-size: 0.94rem;
+      font-size: 0.88rem;
     }
 
-    @media (max-width: 920px) {
-      .hero-grid, .grid-2 { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr; }
-      .topbar { flex-direction: column; align-items: flex-start; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    @media (max-width: 560px) {
-      .container { width: min(100% - 18px, 1180px); }
-      .hero, .section { padding: 18px; border-radius: 22px; }
-      .intro h2 { max-width: 100%; }
-      .btn, .pill, .link-item { width: 100%; }
-      .release { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 900px) {
+      .hero-media,
+      .hero-media img {
+        min-height: 400px;
+      }
+
+      .hero-copy {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+      }
+
+      .notice-grid,
+      .trailer-card,
+      .merch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 18px, 1180px);
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .top-actions {
+        display: none;
+      }
+
+      .hero {
+        padding: 10px;
+        border-radius: 22px;
+      }
+
+      .hero-media,
+      .hero-media img {
+        min-height: 500px;
+      }
+
+      .hero-copy {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 16px;
+      }
+
+      .hero-copy h2 {
+        font-size: clamp(2.05rem, 12vw, 3.8rem);
+      }
+
+      .hero-actions {
+        padding: 14px 2px 2px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+      }
+
+      .count {
+        min-width: 68px;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="noise"></div>
 
-  <main class="container">
-    <section class="hero">
-      <div class="topbar">
+<body>
+  <div id="app">
+    <div class="noise" aria-hidden="true"></div>
+
+    <main class="container">
+      <header class="topbar">
         <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+          <div class="logo" aria-hidden="true">R</div>
+
           <div>
             <h1>Reverie</h1>
-            <p>Pre demo playtest release — 8/14/2026</p>
+            <p>Independent psychedelic psychological horror</p>
           </div>
         </div>
 
-        <a class="pill" href="#playtest">Jump to playtest info</a>
-      </div>
+        <nav class="top-actions" aria-label="Primary navigation">
+          <a class="chip" href="#events">GDEX · Oct 16–18</a>
+          <a class="chip" href="#trailer">Trailer</a>
+          <a
+            class="chip"
+            href="https://store.steampowered.com/app/5298360/Reverie/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Steam ↗
+          </a>
+        </nav>
+      </header>
 
-      <div class="hero-grid">
-        <div class="intro">
-          <div class="eyebrow">Playtest build live now</div>
-          <h3>Unravel a world of chaos and mystery...</h3>
-          <p>
-            Welcome to the official Reverie playtest page. Watch the trailer, join the Discord,
-            download the build, and submit your QA notes so that I can improve Reverie!
-          </p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media">
+          <img
+            src="mainCapsule.png"
+            alt="Reverie main capsule artwork"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
 
-          <div class="cta-row">
-            <a class="btn primary" href="https://discord.gg/utUrugJ6C3" target="_blank" rel="noopener noreferrer">Join the Community Discord</a>
-            <a class="btn ghost" href="https://drive.google.com/file/d/1sD9t_8Ob5rLFvQDiWE65QdSF7anBfFMu/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download the Playtest</a>
-            <a class="btn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSfFT1p8EcHt4E9M2EwTlY-IaxM40SFQJiTYJBZrFy-a495HIw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">QA Test Sheet</a>
-          </div>
-
-          <div class="stats" aria-label="Playtest highlights">
-            <div class="stat">
-              <span class="label">Release date</span>
-              <span class="value">August 14, 2026</span>
-            </div>
-            <div class="stat">
-              <span class="label">Main focus</span>
-              <span class="value">Feedback + bug hunting + creating community</span>
-            </div>
-            <div class="stat">
-              <span class="label">Community hub</span>
-              <span class="value">Discord + QA form</span>
-            </div>
-          </div>
-        </div>
-
-        <aside class="sidecard" aria-label="Playtest details">
-          <p class="release-title">Playtest release</p>
-          <div class="release">
+          <div class="fallback" style="display:none" aria-hidden="true">
             <div>
-              <strong>Playtest Release: Beta 0.75</strong>
-              <span>First public playtest released.</span>
+              <strong>REVERIE</strong>
+              <span>mainCapsule.png · 1232 × 706</span>
             </div>
-            <div class="kbd" title="Release date">4/23/2026</div>
           </div>
 
-          <div class="mini-list">
-            <div class="mini-item">Use the Discord for questions, screenshots, clip sharing, bug reports, and joining the community.</div>
-            <div class="mini-item">Use the QA form for structured bug reports and detailed feedback.</div>
-            <div class="mini-item">Download the latest build from the playtest link on this page.</div>
-          </div>
-        </aside>
-      </div>
-    </section>
+          <div class="hero-copy">
+            <div class="eyebrow">
+              Steam Playtest · October 16, 2026
+            </div>
 
-    <section class="section" id="playtest">
-      <h3>Trailer & playtest links</h3>
-      <p class="sub">Check out the trailer here!</p>
+            <h2>
+              Enter a world where reality is breaking apart.
+            </h2>
 
-      <div class="grid-2">
-        <div>
-          <div class="video-wrap" aria-label="YouTube trailer embed">
-            <iframe
-              src="https://www.youtube.com/embed/l12OD-i04rQ?rel=0&modestbranding=1&playsinline=1"
-              title="Reverie trailer"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <p>
+              Reverie is a psychedelic psychological horror action-adventure.
+              Explore a surreal, procedurally generated world, face grotesque
+              creatures, uncover hidden truths, and shape your path through
+              combat, exploration, and an evolving emotion system.
+            </p>
           </div>
         </div>
 
-        <div class="info-card">
-          <h4>Important links</h4>
-          <p>
-          </p>
+        <div class="hero-actions">
+          <a
+            class="btn primary"
+            href="https://store.steampowered.com/app/5298360/Reverie/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wishlist Reverie on Steam
+            <span class="arrow">↗</span>
+          </a>
 
-          <div class="link-list">
-            <a class="link-item" href="https://discord.gg/utUrugJ6C3" target="_blank" rel="noopener noreferrer">
-              <span>
-                <strong>Discord community</strong>
-                <small>Ask questions, share clips, report issues</small>
-              </span>
-              <span class="arrow">↗</span>
-            </a>
-            <a class="link-item" href="https://drive.google.com/file/d/1sD9t_8Ob5rLFvQDiWE65QdSF7anBfFMu/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              <span>
-                <strong>Download the playtest</strong>
-                <small>Get the latest build</small>
-              </span>
-              <span class="arrow">↗</span>
-            </a>
-            <a class="link-item" href="https://docs.google.com/forms/d/e/1FAIpQLSfFT1p8EcHt4E9M2EwTlY-IaxM40SFQJiTYJBZrFy-a495HIw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-              <span>
-                <strong>QA test sheet</strong>
-                <small>Submit bugs, notes, and balance feedback (around 5-10 minutes to complete)</small>
-              </span>
-              <span class="arrow">↗</span>
-            </a>
+          <a class="btn ghost" href="#trailer">
+            Watch the Trailer
+          </a>
+
+          <a
+            class="btn ghost"
+            href="https://discord.gg/utUrugJ6C3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the Discord
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="events"
+        aria-labelledby="events-title"
+      >
+        <div class="section-head">
+          <div>
+            <h3 id="events-title">October 2026</h3>
+
+            <p class="sub">
+              Two milestones arrive on the same weekend: the first Steam
+              public playtest for Reverie and an in-person appearance at GDEX.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h3>What to expect</h3>
-      <p class="sub">This game is currently unsigned (as this costs money), so Windows Defender might make you disable or ignore some warnings in order to play it. This game has no viruses, bitcoin miners, etc. and is completely safe to play! Additionally, this playtest is free to play, and should act as a demo of sorts. If you don't want to fill in the QA form or join the Discord, you do not need to; although, it is greatly appreciated if you do!</p>
+        <div class="notice-grid">
+          <article class="notice featured">
+            <div class="notice-label">Steam Playtest</div>
 
-      <div class="tabs" role="tablist" aria-label="Reverie info tabs">
-        <button type="button" class="tab active" data-tab="tab1" role="tab" aria-selected="true">About the build</button>
-        <button type="button" class="tab" data-tab="tab2" role="tab" aria-selected="false">How to help</button>
-        <button type="button" class="tab" data-tab="tab3" role="tab" aria-selected="false">About the team</button>
-      </div>
+            <strong>
+              Play Reverie on Steam · October 16
+            </strong>
 
-      <div class="panel active" id="tab1" role="tabpanel">
-        <p>
-          This is the first time the game has been playtested since June of 2025. The game is quite difficult, and the tutorial was hastily made for this release. I apologize in advance for any confusion stemming from the tutorial.<br> For additional help setting up multiplayer, understanding deeper mechanics, or other questions feel free to ask me or others in the Discord community!<br> Future builds will also be uploaded to this site, so save the URL and check back every now and then.
-        </p>
-      </div>
-      <div class="panel" id="tab2" role="tabpanel">
-        <p>
-          Please fill out the Google Forms link provided on this website after you have played a decent portion of the playtest! You can always resubmit it if you have later comments to add. Additionally, joining the Discord community will allow you to go into more detail about bug reports, questions, and suggestions for future builds of the game.
-        </p>
-      </div>
-      <div class="panel" id="tab3" role="tabpanel">
-        <p>
-          Reverie was developed single-handedly by a young, up-and-coming game developer since the end of 2019. All of the assets (art, music, etc.) was created and/or edited solely by me (revowt on Discord). Sound effects were found on freesound.org under the CC0 license or CC BY license (attributions in the menu screen of reverie). Reverie is expected to go through a fundraising phase around October/November of 2026 after building a community to back the game. If you'd like to contribute or join the team, feel free to DM me on Discord!
-        </p>
-      </div>
-    </section>
+            <p>
+              The public playtest launches through Steam on October 16, 2026.
+              Wishlist the game now to follow development and receive Steam
+              notifications.
+            </p>
 
-    <div class="footer">
-      Thanks for checking out Reverie!
-    </div>
-  </main>
+            <div
+              class="countdown"
+              id="countdown"
+              aria-live="polite"
+            >
+              <div class="count">
+                <strong id="days">—</strong>
+                <span>Days</span>
+              </div>
+
+              <div class="count">
+                <strong id="hours">—</strong>
+                <span>Hours</span>
+              </div>
+
+              <div class="count">
+                <strong id="minutes">—</strong>
+                <span>Minutes</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="notice">
+            <div class="notice-label">GDEX 2026</div>
+
+            <strong>
+              Find Reverie in person · October 16–18
+            </strong>
+
+            <p>
+              Reverie will be exhibited at GDEX throughout the October 16–18
+              weekend. Attendees will be able to experience the game in person
+              and see upcoming merchandise at the booth.
+            </p>
+
+            <a
+              class="btn ghost"
+              href="https://www.eventeny.com/events/gdex-2026-27669/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top:14px;"
+            >
+              GDEX Event Information
+              <span class="arrow">↗</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        id="trailer"
+        aria-labelledby="trailer-title"
+      >
+        <div class="section-head">
+          <div>
+            <h3 id="trailer-title">
+              Trailer & what to expect
+            </h3>
+
+            <p class="sub">
+              Watch the latest trailer, then explore the core of Reverie:
+              fast combat, strange places, procedural systems, and a narrative
+              shaped by failure and discovery.
+            </p>
+          </div>
+        </div>
+
+        <div class="trailer-card">
+          <a
+            class="video-link"
+            href="https://youtu.be/AT1PBoNye04"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch the latest Reverie trailer on YouTube"
+          >
+            <div class="play-icon">▶</div>
+
+            <div class="video-caption">
+              <strong>
+                Watch the latest Reverie trailer
+              </strong>
+
+              <span>
+                YouTube · AT1PBoNye04
+              </span>
+            </div>
+          </a>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <strong>
+                Fast-paced hack-and-slash combat
+              </strong>
+
+              <span>
+                Fight, adapt to enemy patterns, and refine your approach as
+                your arsenal evolves.
+              </span>
+            </div>
+
+            <div class="feature-item">
+              <strong>
+                Exploration with procedural elements
+              </strong>
+
+              <span>
+                Search laboratories, hostile wilderness, hidden areas,
+                resources, and strange routes through a shifting world.
+              </span>
+            </div>
+
+            <div class="feature-item">
+              <strong>
+                An emotion-driven system
+              </strong>
+
+              <span>
+                Fear, anger, sadness, happiness, delusion, stoicism, and
+                numbness can affect how you approach the game.
+              </span>
+            </div>
+
+            <div class="feature-item">
+              <strong>
+                Single-player or online co-op
+              </strong>
+
+              <span>
+                Experience Reverie alone or bring friends into the world
+                through online co-op.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="merch-title"
+      >
+        <div class="section-head">
+          <div>
+            <h3 id="merch-title">
+              Reverie at GDEX
+            </h3>
+
+            <p class="sub">
+              Games are only part of the booth. A holographic Reverie sticker
+              and additional merchandise will be available at GDEX while
+              supplies last.
+            </p>
+          </div>
+        </div>
+
+        <div class="merch-grid">
+          <div class="merch-art">
+            <img
+              src="holoSticker.png"
+              alt="Reverie holographic sticker"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+            />
+
+            <div class="fallback" style="display:none" aria-hidden="true">
+              <div>
+                <strong>
+                  Holographic Reverie Sticker
+                </strong>
+
+                <span>
+                  holoSticker.png · 1174 × 878
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="merch-copy">
+            <h4>
+              Take a piece of Reverie home.
+            </h4>
+
+            <p>
+              A holographic Reverie sticker will be sold at the GDEX booth,
+              with additional game merchandise and artwork available as well.
+              This page will be updated with more details as the full lineup
+              is finalized.
+            </p>
+
+            <div
+              class="tag-row"
+              aria-label="Planned merchandise"
+            >
+              <span class="tag">
+                Holographic stickers
+              </span>
+
+              <span class="tag">
+                Reverie artwork
+              </span>
+
+              <span class="tag">
+                Additional merch
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="future-title"
+      >
+        <div class="section-head">
+          <div>
+            <h3 id="future-title">
+              What comes next
+            </h3>
+
+            <p class="sub">
+              The October playtest is an early public milestone. A broader
+              demo is planned for 2027 as development continues.
+            </p>
+          </div>
+        </div>
+
+        <div class="notice-grid">
+          <article class="notice">
+            <div class="notice-label">Now</div>
+
+            <strong>
+              Wishlist the game on Steam
+            </strong>
+
+            <p>
+              Wishlist Reverie today to stay connected to development and
+              receive Steam notifications as milestones approach.
+            </p>
+
+            <a
+              class="btn primary"
+              href="https://store.steampowered.com/app/5298360/Reverie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top:14px;"
+            >
+              Wishlist on Steam
+              <span class="arrow">↗</span>
+            </a>
+          </article>
+
+          <article class="notice">
+            <div class="notice-label">2027</div>
+
+            <strong>
+              A full demo is coming
+            </strong>
+
+            <p>
+              A more complete demo of Reverie is planned for 2027, following
+              continued development and feedback from the October playtest.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        aria-labelledby="links-title"
+      >
+        <div class="section-head">
+          <div>
+            <h3 id="links-title">
+              Connect
+            </h3>
+
+            <p class="sub">
+              Stay involved through the places where Reverie development,
+              announcements, and feedback are shared.
+            </p>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a
+            class="link-card"
+            href="https://store.steampowered.com/app/5298360/Reverie/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Steam</strong>
+            <span>
+              Wishlist Reverie and follow development.
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="https://youtu.be/AT1PBoNye04"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>YouTube</strong>
+            <span>
+              Watch the latest trailer.
+            </span>
+          </a>
+
+          <a
+            class="link-card"
+            href="https://discord.gg/utUrugJ6C3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Discord</strong>
+            <span>
+              Questions, discussion, feedback, and community updates.
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <div class="footer">
+        Reverie · Independent development by Revowt ·
+        <a
+          href="https://store.steampowered.com/app/5298360/Reverie/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color:inherit;"
+        >
+          Steam
+        </a>
+      </div>
+    </main>
+  </div>
 
   <script>
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".panel");
+    (() => {
+      const target =
+        new Date('2026-10-16T00:00:00-04:00').getTime();
 
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.dataset.tab;
+      const countdown =
+        document.getElementById('countdown');
 
-        tabs.forEach((t) => {
-          const active = t === tab;
-          t.classList.toggle("active", active);
-          t.setAttribute("aria-selected", String(active));
-        });
+      const days =
+        document.getElementById('days');
 
-        panels.forEach((panel) => {
-          panel.classList.toggle("active", panel.id === target);
-        });
-      });
-    });
+      const hours =
+        document.getElementById('hours');
+
+      const minutes =
+        document.getElementById('minutes');
+
+      function updateCountdown() {
+        const diff = target - Date.now();
+
+        if (diff <= 0) {
+          countdown.innerHTML =
+            '<div class="count" style="min-width:260px">' +
+            '<strong>Playtest day</strong>' +
+            '<span>Available October 16 on Steam</span>' +
+            '</div>';
+
+          return;
+        }
+
+        const totalMinutes =
+          Math.floor(diff / 60000);
+
+        const d =
+          Math.floor(totalMinutes / 1440);
+
+        const h =
+          Math.floor((totalMinutes % 1440) / 60);
+
+        const m =
+          totalMinutes % 60;
+
+        days.textContent =
+          String(d);
+
+        hours.textContent =
+          String(h).padStart(2, '0');
+
+        minutes.textContent =
+          String(m).padStart(2, '0');
+      }
+
+      updateCountdown();
+
+      window.setInterval(
+        updateCountdown,
+        30000
+      );
+    })();
   </script>
 </body>
 </html>
