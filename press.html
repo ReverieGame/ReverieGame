@@ -1,1 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b16" />
+  <meta name="description" content="Official Reverie press kit: game overview, award information, key art, logo, screenshots, and press contact." />
+  <link rel="icon" type="image/png" href="https://reveriegame.github.io/ReverieGame/reverieIcon.png" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reverie — Press Kit" />
+  <meta property="og:description" content="An award-winning psychedelic psychological horror action-adventure. Download official Reverie press assets." />
+  <meta property="og:url" content="https://reveriegame.github.io/ReverieGame/press.html" />
+  <meta property="og:image" content="https://reveriegame.github.io/ReverieGame/keyArt.png" />
+  <meta property="og:site_name" content="Reverie" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reverie — Press Kit" />
+  <meta name="twitter:description" content="Game overview, award information, official artwork, screenshots, and press contact." />
+  <meta name="twitter:image" content="https://reveriegame.github.io/ReverieGame/keyArt.png" />
+
+  <title>Reverie — Press Kit</title>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: light-dark(#f2f4ff, #090b16);
+      --bg-deep: light-dark(#e8ebfb, #101633);
+      --panel: light-dark(rgba(255,255,255,0.78), rgba(14,18,40,0.76));
+      --panel-strong: light-dark(rgba(255,255,255,0.94), rgba(11,15,33,0.92));
+      --line: light-dark(rgba(50,62,120,0.16), rgba(165,175,255,0.18));
+      --text: light-dark(#15182a, #eef0ff);
+      --muted: light-dark(#59607e, #b7bddf);
+      --accent: #8c7bff;
+      --accent2: #53d7ff;
+      --green: #62f0b3;
+      --shadow: 0 18px 60px rgba(0,0,0,0.24);
+      --radius-lg: 30px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    #app {
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(1200px 760px at 8% 0%, rgba(140,123,255,0.20), transparent 56%),
+        radial-gradient(900px 620px at 96% 12%, rgba(83,215,255,0.14), transparent 52%),
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.08) 100%);
+    }
+    .noise {
+      pointer-events: none; position: fixed; inset: 0; opacity: 0.032;
+      mix-blend-mode: screen;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      z-index: 50;
+    }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0 76px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; text-decoration: none; }
+    .brand-mark {
+      width: 48px; height: 48px; object-fit: contain; flex: 0 0 auto;
+      border: 1px solid var(--line); border-radius: 14px; padding: 5px; background: var(--panel);
+    }
+    .brand-fallback {
+      display: none; width: 48px; height: 48px; flex: 0 0 auto; border-radius: 14px;
+      place-items: center; font-weight: 900; font-size: 1.45rem; color: #08111d;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+    .brand h1 { margin: 0; font-size: 1.2rem; line-height: 1; letter-spacing: 0.01em; }
+    .brand p { margin: 5px 0 0; color: var(--muted); font-size: 0.82rem; }
+    .top-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 9px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line);
+      background: var(--panel); color: var(--text); padding: 9px 12px; border-radius: 999px;
+      font-size: 0.86rem; text-decoration: none; backdrop-filter: blur(14px);
+    }
+    .chip:hover, .btn.ghost:hover, .asset-link:hover { background: var(--panel-strong); }
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.98fr); gap: 24px;
+      align-items: center; overflow: hidden; border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(19,24,54,0.94), rgba(10,12,26,0.84));
+      border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 24px;
+    }
+    .hero-copy { position: relative; z-index: 1; padding: 12px 4px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 7px 10px; margin-bottom: 14px;
+      border: 1px solid rgba(98,240,179,0.28); border-radius: 999px; color: #ddffed;
+      background: rgba(98,240,179,0.09); font-size: 0.76rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+    }
+    .hero h2 { margin: 0; color: #fff; font-size: clamp(2.8rem, 7vw, 5.7rem); line-height: 0.88; letter-spacing: -0.07em; }
+    .hero .tagline { margin: 17px 0 0; max-width: 62ch; color: #e1e5fb; font-size: 1.12rem; line-height: 1.65; }
+    .hero .detail { margin: 12px 0 0; color: #bfc7e1; font-size: 0.92rem; line-height: 1.6; }
+    .hero-art { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); border-radius: 22px; background: #080a13; min-height: 300px; }
+    .hero-art img { display: block; width: 100%; min-height: 300px; height: 100%; object-fit: cover; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 16px;
+      border-radius: var(--radius-sm); border: 1px solid transparent; text-decoration: none; font-weight: 800;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { color: #071019; background: linear-gradient(135deg, #9e91ff, #65ddff); box-shadow: 0 12px 34px rgba(140,123,255,0.26); }
+    .btn.ghost { color: var(--text); border-color: var(--line); background: var(--panel); }
+    .section {
+      margin-top: 20px; padding: 25px; border-radius: var(--radius-lg); background: var(--panel);
+      border: 1px solid var(--line); box-shadow: var(--shadow); backdrop-filter: blur(16px);
+    }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .section h2 { margin: 0; font-size: 1.55rem; letter-spacing: -0.035em; }
+    .section h3 { margin: 0; font-size: 1.18rem; letter-spacing: -0.02em; }
+    .sub { margin: 6px 0 0; color: var(--muted); line-height: 1.65; max-width: 82ch; }
+    .award {
+      display: grid; grid-template-columns: minmax(150px, 0.42fr) 1fr; gap: 20px; align-items: center;
+      padding: 18px; border-radius: 20px; border: 1px solid rgba(140,123,255,0.30);
+      background: linear-gradient(135deg, rgba(140,123,255,0.13), rgba(83,215,255,0.06)), var(--panel-strong);
+    }
+    .award-art { display: grid; place-items: center; min-height: 130px; overflow: hidden; border-radius: 14px; background: rgba(0,0,0,0.12); }
+    .award-art img { display: block; width: 100%; max-height: 190px; object-fit: contain; }
+    .award h3 { font-size: 1.35rem; }
+    .award p { margin: 8px 0 14px; color: var(--muted); line-height: 1.6; }
+    .details-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .detail-card { min-width: 0; padding: 15px; border-radius: 16px; background: rgba(255,255,255,0.045); border: 1px solid var(--line); }
+    .detail-card span { display: block; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.075em; text-transform: uppercase; font-weight: 800; }
+    .detail-card strong { display: block; margin-top: 7px; line-height: 1.45; font-size: 0.96rem; }
+    .prose { max-width: 88ch; color: var(--text); line-height: 1.78; }
+    .prose p { margin: 0 0 15px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .quote-line { border-left: 3px solid var(--accent); padding: 4px 0 4px 17px; color: var(--muted); font-size: 1.03rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .feature-card { padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
+    .feature-card h3 { margin: 0 0 8px; }
+    .feature-card p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .feature-list { margin: 0; padding-left: 1.2rem; color: var(--muted); line-height: 1.85; }
+    .asset-toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+    .asset-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .asset-card { min-width: 0; overflow: hidden; border-radius: 18px; border: 1px solid var(--line); background: var(--panel-strong); }
+    .asset-preview { display: grid; place-items: center; aspect-ratio: 16 / 10; overflow: hidden; background: rgba(0,0,0,0.18); }
+    .asset-preview img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .asset-card.screenshot .asset-preview { aspect-ratio: 16 / 9; }
+    .asset-card.screenshot .asset-preview img { object-fit: cover; transition: transform 0.25s ease; }
+    .asset-card.screenshot:hover .asset-preview img { transform: scale(1.025); }
+    .asset-meta { padding: 12px 13px 14px; }
+    .asset-meta strong { display: block; overflow-wrap: anywhere; font-size: 0.93rem; }
+    .asset-meta p { margin: 4px 0 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+    .asset-link { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; padding: 7px 10px; font-size: 0.82rem; font-weight: 750; text-decoration: none; }
+    .contact-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 18px; border-radius: 18px; background: var(--panel-strong); border: 1px solid var(--line); }
+    .contact-row p { margin: 5px 0 0; color: var(--muted); line-height: 1.6; }
+    .email { font-weight: 800; overflow-wrap: anywhere; }
+    .footer { margin-top: 20px; padding: 16px 4px 0; color: var(--muted); text-align: center; font-size: 0.88rem; }
+    .footer a { color: inherit; }
+    .skip-link { position: absolute; left: -9999px; top: 0; padding: 10px; background: var(--panel-strong); z-index: 100; }
+    .skip-link:focus { left: 10px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-art { max-height: 460px; }
+      .details-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .asset-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .award { grid-template-columns: minmax(120px, 0.45fr) 1fr; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 18px, 1180px); padding-top: 12px; }
+      .topbar { align-items: flex-start; }
+      .top-actions { gap: 6px; }
+      .top-actions .chip { font-size: 0.78rem; padding: 8px 9px; }
+      .brand p { max-width: 150px; line-height: 1.35; }
+      .hero { padding: 14px; border-radius: 22px; }
+      .hero h2 { font-size: clamp(2.7rem, 16vw, 4.4rem); }
+      .hero-art, .hero-art img { min-height: 215px; }
+      .hero-actions .btn { width: 100%; }
+      .section { padding: 18px; border-radius: 22px; }
+      .section-head { align-items: flex-start; }
+      .award { grid-template-columns: 1fr; }
+      .award-art { min-height: 120px; }
+      .details-grid, .feature-grid, .asset-grid { grid-template-columns: 1fr; }
+      .asset-preview { aspect-ratio: 16 / 9; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to press kit content</a>
+  <div id="app">
+    <div class="noise" aria-hidden="true"></div>
+    <main class="container" id="main">
+      <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="Reverie home">
+          <img class="brand-mark" src="Logo.png" alt="Reverie logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <span class="brand-fallback" aria-hidden="true">R</span>
+          <span>
+            <h1>Reverie</h1>
+            <p>Official press kit &amp; media assets</p>
+          </span>
+        </a>
+        <nav class="top-actions" aria-label="Press kit navigation">
+          <a class="chip" href="./index.html">← Website</a>
+          <a class="chip" href="#assets">Media Assets ↓</a>
+          <a class="chip" href="https://store.steampowered.com/app/5298360/Reverie/" target="_blank" rel="noopener noreferrer">Steam ↗</a>
+        </nav>
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Official Press Kit · GDEX 2026 Award Winner</div>
+          <h2 id="hero-title">REVERIE</h2>
+          <p class="tagline">Reverie is an award-winning psychedelic horror adventure where you explore and investigate an esoteric open world, slash through grotesque monsters, and stitch together your new reality. Prepare to die, adapt, and grow stronger as you find strange abilities and learn the secrets of this dying world.</p>
+          <p class="detail">An award-winning psychedelic psychological horror action-adventure set in a world where reality is breaking apart.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="Press%20Kit%20Small.zip" download="Reverie-Press-Kit.zip">Download Press Kit ZIP ↓</a>
+            <a class="btn ghost" href="https://store.steampowered.com/app/5298360/Reverie/" target="_blank" rel="noopener noreferrer">View on Steam ↗</a>
+            <a class="btn ghost" href="https://youtu.be/AT1PBoNye04" target="_blank" rel="noopener noreferrer">Watch Trailer ↗</a>
+            <a class="btn ghost" href="mailto:reveriestudio4@gmail.com?subject=Reverie%20Press%20Inquiry">Contact Press ↗</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img src="keyArt.png" alt="Reverie key art" fetchpriority="high" />
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="award-title">
+        <div class="section-head">
+          <div>
+            <h2 id="award-title">Award &amp; recognition</h2>
+            <p class="sub">A milestone recognizing the game's original music and sound design.</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award-art"><img src="GDEXAward.png" alt="GDEX 2026 Best in Show award artwork" loading="lazy" /></div>
+          <div>
+            <h3>GDEX 2026 — Best in Show: Music &amp; Sound Design</h3>
+            <p>Reverie received the Best in Show award for Music &amp; Sound Design at GDEX 2026.</p>
+            <a class="btn ghost" href="GDEXAward.png" download="GDEXAward.png">Download Award Artwork ↓</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="facts-title">
+        <div class="section-head">
+          <div>
+            <h2 id="facts-title">At a glance</h2>
+            <p class="sub">Quick facts for articles, listings, previews, and event materials.</p>
+          </div>
+        </div>
+        <div class="details-grid">
+          <div class="detail-card"><span>Title</span><strong>Reverie</strong></div>
+          <div class="detail-card"><span>Developer</span><strong>Revowt · Independent</strong></div>
+          <div class="detail-card"><span>Genre</span><strong>Psychedelic psychological horror, action-adventure</strong></div>
+          <div class="detail-card"><span>Play modes</span><strong>Single-player &amp; online co-op</strong></div>
+          <div class="detail-card"><span>Core gameplay</span><strong>Hack-and-slash combat, exploration, crafting</strong></div>
+          <div class="detail-card"><span>World</span><strong>Procedurally generated open world</strong></div>
+          <div class="detail-card"><span>Distribution</span><strong>Steam</strong></div>
+          <div class="detail-card"><span>Demo</span><strong>Full demo planned for 2027</strong></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="short-title">
+        <div class="section-head">
+          <div>
+            <h2 id="short-title">Short description</h2>
+            <p class="sub">For press listings, quick summaries, and store roundups.</p>
+          </div>
+        </div>
+        <div class="prose">
+          <p>Reverie is an award-winning psychedelic horror adventure where you explore and investigate an esoteric open world, slash through grotesque monsters, and stitch together your new reality. Prepare to die, adapt, and grow stronger as you find strange abilities and learn the secrets of this dying world.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="description-title">
+        <div class="section-head">
+          <div>
+            <h2 id="description-title">About Reverie</h2>
+            <p class="sub">Long description</p>
+          </div>
+        </div>
+        <div class="prose">
+          <p>Reverie is an award-winning psychedelic psychological horror action-adventure set in a world where reality is breaking apart.</p>
+          <p>Explore a strange, hazardous, procedurally generated open world filled with infected creatures, crumbling structures, hidden abstract worlds, and fragments of a larger plot that threatens the entire world. Fight your way through infested dungeons, discover new abilities, collect weapons and resources, craft alien drugs, and meet strangers who you grow too invested in.</p>
+          <p>You are not merely trying to survive. You are trying to understand what brought you to this place.</p>
+          <p>Death eludes you as you fight against the strings of fate. Each failure pushes you deeper into Reverie's systems, your past, and the strings that guide you. Experiment with and replace your weapons to claw towards the truth of what's going on around you.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="features-title">
+        <div class="section-head">
+          <div>
+            <h2 id="features-title">Gameplay &amp; themes</h2>
+            <p class="sub">Core pillars and feature copy from the game's store description.</p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Fight. Die. Return.</h3>
+            <p>Combat will leave you on the edge of your seat as you perfect your spacing and learn the enemies' habits. Cleave through creatures with a variety of weapons. Enhance and modify equipment with elemental effects, combine gear to optimize your playstyle, and find abilities to travel the world with and dominate the battlefield. Evolving environments, creatures, and skills will push you to your limits.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Explore a cruel, forsaken world</h3>
+            <p>Reverie's world focuses on natural exploration, discovery, and the slow realization that rock bottom can be smashed through. Collect materials, gear, monster remains, and other rare resources as you travel. Explore labyrinthine laboratories, uncover hidden areas, follow your gut, and find the threads that tie your fate to the heart of this world. Meet friends who help you along your journey, and discern those who can't be trusted. Some stones are best left untouched. Unfortunately, sometimes the only way to truly learn is through experience.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Mind over matter</h3>
+            <p>What happens to you changes you. Reverie tracks your character's emotions as you play. Fear, anger, sadness, happiness, delusion, stoicism, and numbness affect how you approach combat and see the world.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Death is inevitable</h3>
+            <p>Return from failure stronger, unlock new possibilities, and face the past you've been running from, as every mistake reminds you of what you are. The more you die, the tighter the strings of fate tie around your neck.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Play alone or with friends</h3>
+            <p>Experience Reverie as a single-player narrative or get lost with friends in the mirage with online co-op. Fight, explore, and discover together a world that tries to break you down even if you're not alone.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Features</h3>
+            <ul class="feature-list">
+              <li>Psychedelic psychological horror set in a world warped by your own mind</li>
+              <li>Fast-paced hack-and-slash combat</li>
+              <li>Single-player and online co-op</li>
+              <li>Exploration of a vast procedurally generated open world</li>
+              <li>Weapon upgrades, crafting, and trading</li>
+              <li>Unlockable skills and acquirable abilities that expand combat and exploration</li>
+              <li>Replayable systems and procedural elements</li>
+              <li>A unique emotion system that affects mood, discovery, and combat</li>
+              <li>Death that feeds into the narrative and progression</li>
+              <li>A story that questions who is in control, the reality it's set in, and the ability of the human spirit to overcome oneself</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="assets" aria-labelledby="assets-title">
+        <div class="section-head">
+          <div>
+            <h2 id="assets-title">Media assets</h2>
+            <p class="sub">Click a preview to open the full image, or use its download link to save the original file. These links expect the assets to be hosted alongside this page.</p>
+          </div>
+        </div>
+        <div class="asset-toolbar">
+          <a class="btn primary" href="Press%20Kit%20Small.zip" download="Reverie-Press-Kit.zip">Download Press Kit ZIP ↓</a>
+          <a class="btn ghost" href="Logo.png" download="Logo.png">Download Logo ↓</a>
+          <a class="btn ghost" href="keyArt.png" download="keyArt.png">Download Key Art ↓</a>
+        </div>
+
+        <h3 style="margin: 0 0 12px;">Brand &amp; award artwork</h3>
+        <div class="asset-grid" style="margin-bottom: 24px;">
+          <article class="asset-card">
+            <a class="asset-preview" href="Logo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Reverie logo image"><img src="Logo.png" alt="Reverie logo" loading="lazy" /></a>
+            <div class="asset-meta"><strong>Logo.png</strong><p>Official game logo.</p><a class="asset-link" href="Logo.png" download="Logo.png">Download PNG ↓</a></div>
+          </article>
+          <article class="asset-card">
+            <a class="asset-preview" href="keyArt.png" target="_blank" rel="noopener noreferrer" aria-label="Open Reverie key art"><img src="keyArt.png" alt="Reverie key art" loading="lazy" /></a>
+            <div class="asset-meta"><strong>keyArt.png</strong><p>Key art for press coverage and feature images.</p><a class="asset-link" href="keyArt.png" download="keyArt.png">Download PNG ↓</a></div>
+          </article>
+          <article class="asset-card">
+            <a class="asset-preview" href="GDEXAward.png" target="_blank" rel="noopener noreferrer" aria-label="Open GDEX 2026 award artwork"><img src="GDEXAward.png" alt="GDEX 2026 award artwork" loading="lazy" /></a>
+            <div class="asset-meta"><strong>GDEXAward.png</strong><p>Best in Show: Music &amp; Sound Design award artwork.</p><a class="asset-link" href="GDEXAward.png" download="GDEXAward.png">Download PNG ↓</a></div>
+          </article>
+        </div>
+
+        <h3 style="margin: 0 0 12px;">Screenshots</h3>
+        <div class="asset-grid">
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Combat.png" target="_blank" rel="noopener noreferrer" aria-label="Open combat screenshot"><img src="SS_Combat.png" alt="Reverie screenshot: combat" loading="lazy" /></a><div class="asset-meta"><strong>SS_Combat.png</strong><p>Combat</p><a class="asset-link" href="SS_Combat.png" download="SS_Combat.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Combat2.png" target="_blank" rel="noopener noreferrer" aria-label="Open second combat screenshot"><img src="SS_Combat2.png" alt="Reverie screenshot: combat encounter" loading="lazy" /></a><div class="asset-meta"><strong>SS_Combat2.png</strong><p>Combat encounter</p><a class="asset-link" href="SS_Combat2.png" download="SS_Combat2.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_CW3.png" target="_blank" rel="noopener noreferrer" aria-label="Open SS_CW3 screenshot"><img src="SS_CW3.png" alt="Reverie gameplay screenshot" loading="lazy" /></a><div class="asset-meta"><strong>SS_CW3.png</strong><p>Gameplay screenshot</p><a class="asset-link" href="SS_CW3.png" download="SS_CW3.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Explore.png" target="_blank" rel="noopener noreferrer" aria-label="Open exploration screenshot"><img src="SS_Explore.png" alt="Reverie screenshot: world exploration" loading="lazy" /></a><div class="asset-meta"><strong>SS_Explore.png</strong><p>Exploration</p><a class="asset-link" href="SS_Explore.png" download="SS_Explore.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Horror.png" target="_blank" rel="noopener noreferrer" aria-label="Open horror screenshot"><img src="SS_Horror.png" alt="Reverie screenshot: horror atmosphere" loading="lazy" /></a><div class="asset-meta"><strong>SS_Horror.png</strong><p>Horror atmosphere</p><a class="asset-link" href="SS_Horror.png" download="SS_Horror.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Inv.png" target="_blank" rel="noopener noreferrer" aria-label="Open inventory screenshot"><img src="SS_Inv.png" alt="Reverie screenshot: inventory" loading="lazy" /></a><div class="asset-meta"><strong>SS_Inv.png</strong><p>Inventory</p><a class="asset-link" href="SS_Inv.png" download="SS_Inv.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Journal.png" target="_blank" rel="noopener noreferrer" aria-label="Open journal screenshot"><img src="SS_Journal.png" alt="Reverie screenshot: journal" loading="lazy" /></a><div class="asset-meta"><strong>SS_Journal.png</strong><p>Journal</p><a class="asset-link" href="SS_Journal.png" download="SS_Journal.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_NPC.png" target="_blank" rel="noopener noreferrer" aria-label="Open NPC screenshot"><img src="SS_NPC.png" alt="Reverie screenshot: character encounter" loading="lazy" /></a><div class="asset-meta"><strong>SS_NPC.png</strong><p>Character encounter</p><a class="asset-link" href="SS_NPC.png" download="SS_NPC.png">Download PNG ↓</a></div></article>
+          <article class="asset-card screenshot"><a class="asset-preview" href="SS_Town.png" target="_blank" rel="noopener noreferrer" aria-label="Open town screenshot"><img src="SS_Town.png" alt="Reverie screenshot: town" loading="lazy" /></a><div class="asset-meta"><strong>SS_Town.png</strong><p>Town</p><a class="asset-link" href="SS_Town.png" download="SS_Town.png">Download PNG ↓</a></div></article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="contact-title">
+        <div class="section-head">
+          <div>
+            <h2 id="contact-title">Press contact</h2>
+            <p class="sub">For review keys, interviews, coverage, or other press inquiries, please reach out by email.</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div><h3>Revowt · Reverie</h3><p class="email"><a href="mailto:reveriestudio4@gmail.com?subject=Reverie%20Press%20Inquiry">reveriestudio4@gmail.com</a></p></div>
+          <a class="btn primary" href="mailto:reveriestudio4@gmail.com?subject=Reverie%20Press%20Inquiry">Email the developer ↗</a>
+        </div>
+        <div class="hero-actions">
+          <a class="btn ghost" href="https://store.steampowered.com/app/5298360/Reverie/" target="_blank" rel="noopener noreferrer">Steam page ↗</a>
+          <a class="btn ghost" href="https://youtu.be/AT1PBoNye04" target="_blank" rel="noopener noreferrer">Latest trailer ↗</a>
+          <a class="btn ghost" href="https://discord.gg/utUrugJ6C3" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+          <a class="btn ghost" href="./index.html">Reverie website ↗</a>
+        </div>
+      </section>
+
+      <footer class="footer">Reverie · Independent development by Revowt · <a href="./index.html">Website</a> · <a href="https://store.steampowered.com/app/5298360/Reverie/" target="_blank" rel="noopener noreferrer">Steam</a></footer>
+    </main>
+  </div>
+</body>
+</html>
